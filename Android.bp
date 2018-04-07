@@ -139,6 +139,14 @@ cc_library_static {
     cflags: ["-include bionic/libc/async_safe/include/async_safe/log.h"],
 
     srcs: lib_src_files,
+
+    target: {
+        android: {
+            lto: {
+                thin: true,
+            },
+        },
+    },
 }
 
 //-----------------------------------------------------------------------
@@ -156,4 +164,11 @@ cc_library_static {
 
     srcs: lib_src_files,
 
+    target: {
+        android: {
+            lto: {
+                thin: true,
+            },
+        },
+    },
 }
